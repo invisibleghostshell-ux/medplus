@@ -14,19 +14,25 @@
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+.chatbot-toggler:hover {
+    background-color: #218838;
 }
 
 .chatbot-toggler .material-symbols-rounded,
 .chatbot-toggler .material-symbols-outlined {
-    font-size: 24px;
+    font-size: 30px;
 }
 
 /* Chatbot Container */
 .chatbot {
     position: fixed;
-    bottom: 80px;
+    bottom: 90px;
     right: 20px;
-    width: 350px;
+    width: 100%;
+    max-width: 350px;
     max-height: 500px;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -34,6 +40,7 @@
     display: none;
     flex-direction: column;
     z-index: 1000;
+    overflow: hidden;
 }
 
 .chatbot.active {
@@ -47,7 +54,7 @@
     justify-content: space-between;
     background-color: #28a745;
     color: #fff;
-    padding: 10px;
+    padding: 10px 15px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
@@ -60,15 +67,21 @@
 .chatbot header .close-btn {
     cursor: pointer;
     font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.chatbot header .close-btn:hover {
+    color: #ffc107;
 }
 
 /* Chatbox */
 .chatbox {
     flex: 1;
     overflow-y: auto;
-    padding: 10px;
+    padding: 15px;
     list-style: none;
     margin: 0;
+    background-color: #f8f9fa;
 }
 
 .chatbox .chat {
@@ -87,8 +100,10 @@
 
 .chatbox .chat p {
     max-width: 70%;
-    padding: 10px;
+    padding: 10px 15px;
     border-radius: 10px;
+    font-size: 14px;
+    line-height: 1.5;
 }
 
 .chatbox .chat.incoming p {
@@ -107,6 +122,7 @@
     align-items: center;
     padding: 10px;
     border-top: 1px solid #ddd;
+    background-color: #fff;
 }
 
 .chat-input textarea {
@@ -118,6 +134,7 @@
     outline: none;
     font-size: 14px;
     margin-right: 10px;
+    transition: border-color 0.3s ease;
 }
 
 .chat-input textarea:focus {
@@ -127,5 +144,10 @@
 .chat-input span {
     cursor: pointer;
     color: #28a745;
-    font-size: 24px;
+    font-size: 30px;
+    transition: color 0.3s ease;
+}
+
+.chat-input span:hover {
+    color: #218838;
 }
